@@ -30,14 +30,14 @@
 
 ;;; Code:
 
-;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Require ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; ;;;;;;;;;;;;;;;;;;;;;;;;; Require ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (require 'eshell)
 (require 'cl-lib)
 (require 'subr-x)
 (require 'seq)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Customize ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Customize ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defgroup eshell-multiple nil
   "Multi eshell manager."
@@ -48,14 +48,16 @@
   :type 'integer
   :group 'eshell-multiple)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Variable ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (defvar eshell-multiple-buffer-list nil
   "The list of non-dedicated eshell buffers.")
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Hook ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Hook ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (add-hook 'kill-buffer-hook 'eshell-multiple-kill-buffer-hook)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Utilise Functions ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Utilise Functions ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defun eshell-multiple-kill-buffer-hook ()
   "Function that hook `kill-buffer-hook'."
@@ -72,7 +74,7 @@
           (dolist (buffer-index eshell-buffer-index-list)
             (if (equal buffer-index eshell-buffer-index-counter)
                 (setq eshell-buffer-index-counter (+ 1 eshell-buffer-index-counter))
-              (return eshell-buffer-index-counter)))
+              (cl-return eshell-buffer-index-counter)))
           eshell-buffer-index-counter)
       1)))
 
