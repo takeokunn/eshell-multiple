@@ -36,21 +36,6 @@
   "Multi eshell manager."
   :group 'eshell-multiple)
 
-(defcustom eshell-multiple-clear-buffer-key "C-l"
-  "The keystroke for clear buffer."
-  :type 'string
-  :group 'eshell-multiple)
-
-(defcustom eshell-multiple-sudo-toggle-key "C-S-l"
-  "The keystroke for toggle sudo"
-  :type 'string
-  :group 'eshell-multiple)
-
-(defcustom eshell-multiple-search-history-key "M-'"
-  "The keystroke for search history"
-  :type 'string
-  :group 'eshell-multiple)
-
 (defcustom eshell-multiple-dedicated-window-height 14
   "The height of `eshell' dedicated window."
   :type 'integer
