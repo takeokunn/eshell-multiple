@@ -30,6 +30,13 @@
 
 ;;; Code:
 
+;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Require ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(require 'eshell)
+(require 'cl-lib)
+(require 'subr-x)
+(require 'seq)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Customize ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defgroup eshell-multiple nil
